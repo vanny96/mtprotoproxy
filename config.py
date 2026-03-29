@@ -14,4 +14,4 @@ MODES = {
 }
 
 TLS_DOMAIN = os.getenv("MTPROTO_TLS_DOMAIN", "www.google.com")
-AD_TAG = os.getenv("MTPROTO_AD_TAG", None)
+AD_TAG = os.getenv("MTPROTO_AD_TAG", "")
