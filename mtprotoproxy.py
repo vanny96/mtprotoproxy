@@ -20,7 +20,6 @@ import os
 import stat
 import traceback
 import json
-from pprint import pprint
 
 
 TG_DATACENTER_PORT = 443
@@ -297,8 +296,8 @@ def init_config():
     conf_dict.setdefault("METRICS_PREFIX", "mtprotoproxy_")
 
     # print configuration
-    print("Loaded configuration:")
-    pprint(json.dumps(conf_dict, indent=4))
+    print("Loaded configuration")
+    print(json.dumps(conf_dict, indent=4, default=lambda o: "???"))
 
     # allow access to config by attributes
     config = type("config", (dict,), conf_dict)(conf_dict)
