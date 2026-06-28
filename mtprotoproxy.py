@@ -20,6 +20,7 @@ import os
 import stat
 import traceback
 import json
+from pprint import pprint
 
 
 TG_DATACENTER_PORT = 443
@@ -297,7 +298,7 @@ def init_config():
 
     # print configuration
     print("Loaded configuration:")
-    print(json.dumps(conf_dict, indent=4))
+    pprint(json.dumps(conf_dict, indent=4))
 
     # allow access to config by attributes
     config = type("config", (dict,), conf_dict)(conf_dict)
