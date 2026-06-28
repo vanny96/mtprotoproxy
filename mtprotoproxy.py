@@ -19,6 +19,7 @@ import signal
 import os
 import stat
 import traceback
+import json
 
 
 TG_DATACENTER_PORT = 443
@@ -293,6 +294,10 @@ def init_config():
 
     # default prefix for metrics
     conf_dict.setdefault("METRICS_PREFIX", "mtprotoproxy_")
+
+    # print configuration
+    print("Loaded configuration:")
+    print(json.dumps(conf_dict, indent=4))
 
     # allow access to config by attributes
     config = type("config", (dict,), conf_dict)(conf_dict)
