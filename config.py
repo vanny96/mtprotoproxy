@@ -1,6 +1,9 @@
 import os
 
 PORT = int(os.getenv("MTPROTO_PORT", 443))
+METRICS_PORT = os.getenv("MTPROTO_METRICS_PORT", None)
+
+MY_DOMAIN = os.getenv("MTPROTO_MY_DOMAIN", None)
 
 # name -> secret (32 hex chars)
 # USERS environment variable format: "user1:secret1,user2:secret2"
